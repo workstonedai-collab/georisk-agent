@@ -21,7 +21,7 @@
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB)](pyproject.toml)
 [![Status: Alpha](https://img.shields.io/badge/status-alpha-orange.svg)](docs/roadmap.md)
 
-[简体中文](README.zh-CN.md) · [Quickstart](#try-it-in-two-minutes) · [Architecture](docs/architecture.md) · [Deployment](docs/deployment.md) · [Peer project](https://github.com/workstonedai-collab/market-entry-agent)
+[简体中文](README.zh-CN.md) · [Quickstart](#try-it-in-two-minutes) · [Architecture](docs/architecture.md) · [Windows setup](docs/windows.md) · [Deployment](docs/deployment.md) · [Peer project](https://github.com/workstonedai-collab/market-entry-agent)
 
 A research agent for teams whose people, shipments or assets depend on conditions abroad. Give it the countries, events and business exposure you care about. It searches explicit public queries, reads registered sources and saves a brief with source claims, business implications, missing information and indicators to watch.
 
@@ -188,7 +188,16 @@ Open **http://127.0.0.1:8711**. Inspect the saved brief, source records and tool
 
 The demo uses **fictional scenarios and a deterministic policy**. Its interface and exports are labeled accordingly. It demonstrates the execution and storage path, not the quality of an LLM or real-time intelligence.
 
-Windows: activate with `.venv\Scripts\activate`. Commands can also be invoked with `python -m georisk_agent`. The package is installed from this repository; no PyPI publication is claimed.
+For native Windows, use PowerShell without activation:
+
+```powershell
+py -3.11 -m venv .venv
+& ".\.venv\Scripts\python.exe" -m pip install .
+& ".\.venv\Scripts\python.exe" -m georisk_agent demo
+& ".\.venv\Scripts\python.exe" -m georisk_agent serve
+```
+
+See the [Windows installation, model configuration and troubleshooting guide](docs/windows.md). CI exercises Python 3.11–3.13 on Windows, macOS and Linux, plus a clean PowerShell installation. The package is installed from this repository or its release wheel; no PyPI publication is claimed.
 
 ## Use a model and your evidence
 
