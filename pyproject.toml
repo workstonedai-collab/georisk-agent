@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "georisk-agent"
+version = "0.4.0"
+description = "A self-hosted geopolitical risk agent with evidence tools, durable missions, event revisions and an operator-reviewed alert inbox."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "workstonedai-collab"}]
+dependencies = []
+classifiers = ["Development Status :: 3 - Alpha", "Programming Language :: Python :: 3", "Topic :: Scientific/Engineering :: Artificial Intelligence"]
+
+[project.scripts]
+georisk-agent = "georisk_agent.app:main"
+
+[project.urls]
+Repository = "https://github.com/workstonedai-collab/georisk-agent"
+Issues = "https://github.com/workstonedai-collab/georisk-agent/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+georisk_agent = ["web.html", "data/*.json"]

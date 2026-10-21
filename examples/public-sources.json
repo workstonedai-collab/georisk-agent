@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "id": "un-news",
+      "url": "https://news.un.org/feed/subscribe/en/news/all/rss.xml",
+      "allowed_hosts": [
+        "news.un.org"
+      ],
+      "countries": [
+        "Global"
+      ],
+      "topics": [
+        "news"
+      ],
+      "kind": "feed"
+    }
+  ]
+}
