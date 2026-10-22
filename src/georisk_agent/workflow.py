@@ -3,6 +3,7 @@ import re
 import unicodedata
 from .business import Records, choice, date, fields, fingerprint, strings, text
 from .countries import scope_keys
+from .decision import alert_details
 
 
 class Workflow(Records):
@@ -81,7 +82,7 @@ class Workflow(Records):
 
     def state_in(self, db, project):
         return {'product':self.product, 'project_id':project, **{k:self.list(db,project,k) for k in self.kinds},
-                'alerts':self.list(db,project,'alert'), 'checks':self.list(db,project,'check'),
+                'alerts':alert_details(self.store,self.list(db,project,'alert')), 'checks':self.list(db,project,'check'),
                 'note':'Private project state. Event identity matches normalized subject/location/day, not unrestricted semantic clustering. Alerts are local qualitative assessments.'}
 
     def check(self, project):

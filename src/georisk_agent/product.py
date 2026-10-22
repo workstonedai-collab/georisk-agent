@@ -21,6 +21,9 @@ SPEC = {'id': 'georisk-agent',
  'demo_follow': ['下次运行时比较资料是否有更新。']}
 
 
+SPEC['system'] += ' Read the relevant saved sources before deciding a conclusion; a failed or unavailable tool is not evidence. When public search queries are absent, use local evidence instead of trying to search. Compare changes with the previous assessment when available, and tie the impact to the supplied exposure.'
+
+
 def demo_report(mission, evidence, previous):
     ids = [e["id"] for e in evidence]
     return {
