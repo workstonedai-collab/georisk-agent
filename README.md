@@ -35,9 +35,11 @@ New to deployment? Give this repository to your own coding agent. Ask it to run 
 
 ## Continue the business project
 
-The private project desk links source revisions into event dossiers, matches configured exposure, and creates local alerts when the saved assessment changes. Repeated checks or summary-only edits stay quiet.
+Keep the people, assets, routes or operations you care about in a private project, then follow each event as new sources arrive. Changes in severity, status, evidence strength or business impact create local alerts; summary-only edits and repeated sources stay quiet. Each alert retains source dates, the affected exposure and what to watch next.
 
-[Workflow guide, boundaries and public replay](docs/product-workflow.md) · [Public case](examples/public-project-case.json)
+Add an exposure, save an event, or continue research from the project desk. Local comparison uses saved records only. To obtain new information, run research, refresh registered sources or start a configured worker. You can record whether an alert was useful and how it was handled.
+
+[Workflow guide and public replay](docs/product-workflow.md) · [Case sources](examples/public-project-case.json)
 
 ## Questions to bring to the agent
 

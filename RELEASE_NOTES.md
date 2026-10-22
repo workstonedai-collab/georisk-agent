@@ -1,3 +1,10 @@
+# v0.6.1 · Clearer language and readable project history
+
+- Reworked Chinese project guidance, form labels and report-writing guidance while preserving sources, uncertainty and the open-source scope.
+- Differentiated the two products’ starter questions and report focus.
+- Project history now shows readable fields; original JSON remains available. Record-ID guidance follows the selected record type.
+- Existing storage, commands and Windows/macOS/Linux support are unchanged.
+
 # v0.6.0 · Product-specific private project workflows
 
 在“项目持续跟踪”中配置经营暴露，把同一事件的来源和进展保存在一个档案中。检查严重程度、状态和影响是否变化，形成与本项目相关的本地提醒；重复资料不会反复提醒。

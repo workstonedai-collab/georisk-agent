@@ -1,6 +1,24 @@
 from __future__ import annotations
 
-SPEC = {'id': 'georisk-agent', 'name': '地缘政治风险监测预警智能体', 'port': 8711, 'accent': '#226752', 'tagline': '查询公开国区数据，围绕你的问题收集资料、形成报告并保存后续行动。', 'system': 'Write a geopolitical research brief for the supplied question. Use the provided public sources. Cite read evidence, state uncertainty and keep proposed actions separate from facts.', 'starter': {'question': '比较越南与印度尼西亚的公开国区指标，并列出还需要查证的问题。', 'countries': ['Vietnam', 'Indonesia'], 'topics': ['trade', 'investment', 'logistics'], 'context': '虚构演示：设备出口团队正在收集公开资料。', 'max_steps': 12, 'deadline_seconds': 180}, 'demo_summary': '规则演示已整理导入的虚构资料，并保留来源与日期。', 'demo_assessment': '这是虚构资料的规则演示。请检查来源及适用范围，补充资料后再形成实际业务判断。', 'demo_actions': ['查看各项资料的来源与日期。', '补充与本次问题相关的资料。'], 'demo_follow': ['下次运行时比较资料是否有更新。']}
+SPEC = {'id': 'georisk-agent',
+ 'name': '地缘政治风险监测预警智能体',
+ 'port': 8711,
+ 'accent': '#226752',
+ 'tagline': '跟踪你关注的事件，说明哪些业务可能受影响、依据是什么，以及接下来要看什么。',
+ 'system': 'Write a geopolitical research brief for the supplied question. Use the provided public sources. '
+           'Cite read evidence, state uncertainty and keep proposed actions separate from facts. Focus on '
+           'what changed, why it matters to the supplied exposure, and what observable developments would '
+           'change the assessment. Keep event severity, evidence strength and business relevance distinct.',
+ 'starter': {'question': '设备出口团队关注越南与印度尼西亚的交付安排。现有资料提到哪些物流或政策变化？哪些可能影响交付，下一步应核查什么？',
+             'countries': ['Vietnam', 'Indonesia'],
+             'topics': ['trade', 'investment', 'logistics'],
+             'context': '虚构演示：设备出口团队正在收集公开资料。',
+             'max_steps': 12,
+             'deadline_seconds': 180},
+ 'demo_summary': '规则演示已整理导入的虚构资料，并保留来源与日期。',
+ 'demo_assessment': '这是虚构资料的规则演示。请检查来源及适用范围，补充资料后再形成实际业务判断。',
+ 'demo_actions': ['查看各项资料的来源与日期。', '补充与本次问题相关的资料。'],
+ 'demo_follow': ['下次运行时比较资料是否有更新。']}
 
 
 def demo_report(mission, evidence, previous):
