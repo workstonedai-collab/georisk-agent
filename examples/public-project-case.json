@@ -1,0 +1,152 @@
+{
+  "schema": "public-project-case/v1",
+  "project_id": "historical-rubymar",
+  "case_type": "historical_public_source_replay",
+  "captured_at": "2026-10-22",
+  "sources": [
+    {
+      "title": "UNOSAT preliminary assessment, 29 February 2024",
+      "url": "https://unosat.org/static/unosat_filesystem/3805/UNOSAT_Preliminary_Assessment_Report_OS20240225YEM_SouthernRedSea_29FEB2024%20%281%29.pdf",
+      "published_at": "2024-02-29T00:00:00Z",
+      "countries": [
+        "Yemen"
+      ],
+      "topics": [
+        "red-sea",
+        "shipping"
+      ],
+      "body": "资料摘要：UNOSAT 2024年2月29日初步卫星评估记录了 Rubymar 船位，并在2月20日影像中识别可能的漂浮油膜；截至2月24日，报告未发现对所列沿岸的可见影响。可能油膜与确定污染影响应区分。摘要依据报告第4、9页；不复制地图或卫星影像。",
+      "status": "source_claim",
+      "retrieval_kind": "attributed_public_summary",
+      "observed_at": "2026-10-22T00:00:00Z",
+      "date_basis": "publication_date_only"
+    },
+    {
+      "title": "IMO Secretary-General statement, 4 March 2024",
+      "url": "https://www.imo.org/en/mediacentre/secretarygeneral/pages/red-sea-galaxy-leader-and-rubymar.aspx",
+      "published_at": "2024-03-04T00:00:00Z",
+      "countries": [
+        "Yemen"
+      ],
+      "topics": [
+        "red-sea",
+        "shipping"
+      ],
+      "body": "资料摘要：IMO秘书长在2024年3月4日声明中指出，Rubymar 最近沉没带来额外环境及海上安全风险，并表示正与也门政府和其他联合国机构联系提供协助。该来源不能证明某个虚构企业的货物已受影响。",
+      "status": "source_claim",
+      "retrieval_kind": "attributed_public_summary",
+      "observed_at": "2026-10-22T00:00:00Z",
+      "date_basis": "publication_date_only"
+    }
+  ],
+  "operator_commands": [
+    {
+      "kind": "exposure",
+      "id": "fictional-route",
+      "data": {
+        "name": "虚构企业的红海航线",
+        "countries": [
+          "Yemen"
+        ],
+        "topics": [
+          "red-sea"
+        ],
+        "min_severity": "moderate",
+        "active": true,
+        "note": "虚构使用条件；不代表真实资产、订单、事故受害者或当前预警。"
+      }
+    },
+    {
+      "kind": "exposure",
+      "id": "fictional-unrelated",
+      "data": {
+        "name": "虚构无关市场",
+        "countries": [
+          "Vietnam"
+        ],
+        "topics": [
+          "investment"
+        ],
+        "min_severity": "moderate",
+        "active": true,
+        "note": "用于验证不关联的对象不产生提醒。"
+      }
+    }
+  ],
+  "phases": [
+    {
+      "source": 0,
+      "commands": [
+        {
+          "kind": "event",
+          "id": "auto",
+          "expected_revision": 0,
+          "data": {
+            "title": "Rubymar 海上安全与污染风险进展",
+            "subject": "MV Rubymar incident",
+            "location": "Southern Red Sea",
+            "occurred_at": "2024-02-18",
+            "published_at": "2024-02-29",
+            "countries": [
+              "Yemen"
+            ],
+            "topics": [
+              "red-sea",
+              "shipping"
+            ],
+            "summary": "资料摘要：UNOSAT 2024年2月29日初步卫星评估记录了 Rubymar 船位，并在2月20日影像中识别可能的漂浮油膜；截至2月24日，报告未发现对所列沿岸的可见影响。可能油膜与确定污染影响应区分。摘要依据报告第4、9页；不复制地图或卫星影像。",
+            "severity": "moderate",
+            "confidence": "source_statement",
+            "status": "tracking",
+            "impact": "历史案例分析：潜在油膜值得航线使用方继续核查，不能推定虚构货物或沿岸设施已受损。",
+            "next_check": "检查 IMO 后续声明与航运公司实际航线公告。",
+            "evidence_ids": [
+              "$source0"
+            ],
+            "change_note": "初始来源：保留卫星评估的不确定性。"
+          }
+        }
+      ]
+    },
+    {
+      "source": 1,
+      "commands": [
+        {
+          "kind": "event",
+          "id": "auto",
+          "expected_revision": 1,
+          "data": {
+            "title": "Rubymar 海上安全与污染风险进展",
+            "subject": "MV Rubymar incident",
+            "location": "Southern Red Sea",
+            "occurred_at": "2024-02-18",
+            "published_at": "2024-03-04",
+            "countries": [
+              "Yemen"
+            ],
+            "topics": [
+              "red-sea",
+              "shipping"
+            ],
+            "summary": "资料摘要：IMO秘书长在2024年3月4日声明中指出，Rubymar 最近沉没带来额外环境及海上安全风险，并表示正与也门政府和其他联合国机构联系提供协助。该来源不能证明某个虚构企业的货物已受影响。",
+            "severity": "high",
+            "confidence": "source_statement",
+            "status": "escalated",
+            "impact": "历史案例分析：新增沉船信息使环境和航行影响更值得跟踪；需核对承运商公告，不自动指示改航。",
+            "next_check": "检查 IMO 后续声明与航运公司实际航线公告。",
+            "evidence_ids": [
+              "$source1"
+            ],
+            "change_note": "由可能油膜观察推进到 IMO 对沉船及其风险的声明。"
+          }
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "来源为当前取回的历史公告摘要，不证明系统当年已发现事件。",
+    "严重程度及影响是案例演练判断，不是来源给出的概率。",
+    "无付费模型；使用替身动作验证协议和保存流程。",
+    "虚构对象的匹配不代表已验证真实经营损失。"
+  ]
+}
