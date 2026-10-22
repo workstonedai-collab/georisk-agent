@@ -40,3 +40,5 @@ def demo_report(mission, evidence, previous):
 
 
 SPEC["demo_report"] = demo_report
+
+SPEC["system"] += " For an exposure with no supported connection to the event, recommend normal operating procedures unless separate evidence indicates a change. Missing information about an unrelated country or transport mode alone is not a reason to delay travel, halt work or impose additional emergency measures."

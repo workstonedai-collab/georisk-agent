@@ -1,0 +1,184 @@
+{
+  "schema": "report-cases/v1",
+  "retrieval_mode": "fixed_public_corpus",
+  "notice": "真实历史公告的署名摘要；企业条件虚构。仅检验历史资料分析，不是当前法律、航运建议或完整覆盖。",
+  "cases": [
+    {
+      "id": "rubymar-route",
+      "mission": {
+        "question": "Rubymar 的新进展会怎样影响这批设备交付？眼下应维持原安排、准备备选还是改航，什么情况会改变判断？",
+        "context": "虚构企业测试条件：截至2024年3月4日，一家设备商有一批已订舱货物原计划经过红海。承运商尚未确认是否改航；合同交付日还有30天，客户没有备用设备，企业没有专职海事团队。尚无新报价、保险条款和准确船位。",
+        "countries": [
+          "Yemen"
+        ],
+        "topics": [
+          "red-sea",
+          "shipping"
+        ],
+        "as_of": "2024-03-04T23:59:59Z",
+        "search_queries": [],
+        "max_steps": 12,
+        "max_model_calls": 13,
+        "deadline_seconds": 600
+      },
+      "sources": [
+        {
+          "title": "UNOSAT preliminary assessment, 29 February 2024",
+          "url": "https://unosat.org/static/unosat_filesystem/3805/UNOSAT_Preliminary_Assessment_Report_OS20240225YEM_SouthernRedSea_29FEB2024%20%281%29.pdf",
+          "published_at": "2024-02-29T00:00:00Z",
+          "countries": [
+            "Yemen"
+          ],
+          "topics": [
+            "red-sea",
+            "shipping"
+          ],
+          "body": "资料摘要：UNOSAT 2024年2月29日初步卫星评估记录了 Rubymar 船位，并在2月20日影像中识别可能的漂浮油膜；截至2月24日，报告未发现对所列沿岸的可见影响。可能油膜与确定污染影响应区分。摘要依据报告第4、9页；不复制地图或卫星影像。",
+          "status": "source_claim",
+          "retrieval_kind": "attributed_public_summary",
+          "observed_at": "2026-10-22T00:00:00Z",
+          "date_basis": "publication_date_only"
+        },
+        {
+          "title": "IMO Secretary-General statement, 4 March 2024",
+          "url": "https://www.imo.org/en/mediacentre/secretarygeneral/pages/red-sea-galaxy-leader-and-rubymar.aspx",
+          "published_at": "2024-03-04T00:00:00Z",
+          "countries": [
+            "Yemen"
+          ],
+          "topics": [
+            "red-sea",
+            "shipping"
+          ],
+          "body": "资料摘要：IMO秘书长在2024年3月4日声明中指出，Rubymar 最近沉没带来额外环境及海上安全风险，并表示正与也门政府和其他联合国机构联系提供协助。该来源不能证明某个虚构企业的货物已受影响。",
+          "status": "source_claim",
+          "retrieval_kind": "attributed_public_summary",
+          "observed_at": "2026-10-22T00:00:00Z",
+          "date_basis": "publication_date_only"
+        }
+      ],
+      "review_focus": [
+        "区分卫星初步观察与沉船声明；不得认定货物受损或航道封锁。",
+        "把30天窗口、客户无备用设备和承运商安排连到决策。"
+      ]
+    },
+    {
+      "id": "true-confidence-crews",
+      "mission": {
+        "question": "在 True Confidence 遭袭及后续声明之后，这周出货计划和驻外人员安排应如何调整？给运营负责人一份可执行的判断。",
+        "context": "虚构企业测试条件：截至2024年3月19日，企业每周有货经红海，下一票尚未订舱；两名安装工程师已经在越南项目现场，另有一名计划乘商业航班去马来西亚。客户最关心是否按原期收到备件。企业未取得路线、改航报价和保险回复。",
+        "countries": [
+          "Yemen"
+        ],
+        "topics": [
+          "security",
+          "shipping"
+        ],
+        "as_of": "2024-03-19T23:59:59Z",
+        "search_queries": [],
+        "max_steps": 12,
+        "max_model_calls": 13,
+        "deadline_seconds": 600
+      },
+      "sources": [
+        {
+          "title": "IMO statement on True Confidence, 6 March 2024",
+          "url": "https://www.imo.org/en/MediaCentre/PressBriefings/pages/Attack-on-True-Confidence.aspx",
+          "published_at": "2024-03-06T00:00:00Z",
+          "countries": [
+            "Yemen"
+          ],
+          "topics": [
+            "shipping",
+            "security"
+          ],
+          "body": "资料摘要：IMO秘书长2024年3月6日就 True Confidence 在也门亚丁西南方遭攻击后出现伤亡的报道表达哀悼，感谢附近船只参与救助并呼吁保护海员。声明未提供具体航次中断天数、保险报价或另一家企业的受损情况。",
+          "status": "source_claim",
+          "retrieval_kind": "attributed_public_summary",
+          "observed_at": "2026-10-22T00:00:00Z",
+          "date_basis": "publication_date_only"
+        },
+        {
+          "title": "IMO statement on shipping attacks, 18 March 2024",
+          "url": "https://www.imo.org/en/MediaCentre/SecretaryGeneral/Pages/Recent-attacks-on-international-shipping.aspx",
+          "published_at": "2024-03-18T00:00:00Z",
+          "countries": [
+            "Yemen"
+          ],
+          "topics": [
+            "shipping",
+            "security"
+          ],
+          "body": "资料摘要：IMO秘书长2024年3月18日谴责胡塞武装对红海海员持续发动攻击，向 True Confidence 遇难者家属等致哀；另提到 Rubymar 沉没污染及船舶为保障安全改走较长路线、增加排放。讲话同时讨论索马里海盗等事件，不能把这些事件混成同一起攻击，也未对具体企业是否改航作判断。",
+          "status": "source_claim",
+          "retrieval_kind": "attributed_public_summary",
+          "observed_at": "2026-10-22T00:00:00Z",
+          "date_basis": "publication_date_only"
+        }
+      ],
+      "review_focus": [
+        "拆分货物海运暴露与东南亚人员出行，不无依据全面停工。",
+        "区分人员安全事件、货期传导及待核实成本。"
+      ]
+    },
+    {
+      "id": "panama-booking",
+      "mission": {
+        "question": "运河新通告是否足以恢复原来的交付承诺？请比较继续等预约和准备替代路线，说明业务上先查哪件事。",
+        "context": "虚构企业测试条件：截至2023年12月16日，设备商下一批货计划2024年1月20日左右经过巴拿马运河，之后运往美国东岸；具体抵港日未知。合同只容许延迟7天，尚未取得运河预约确认，货已备齐，改走其他路线的报价和到港时间未知。",
+        "countries": [
+          "Panama"
+        ],
+        "topics": [
+          "logistics",
+          "shipping"
+        ],
+        "as_of": "2023-12-16T23:59:59Z",
+        "search_queries": [],
+        "max_steps": 12,
+        "max_model_calls": 13,
+        "deadline_seconds": 600
+      },
+      "sources": [
+        {
+          "title": "ACP reduction in transits, advisory A-48-2023",
+          "url": "https://pancanal.com/wp-content/uploads/2023/01/ADV48-2023-Reduction-in-Transits-Due-to-the-Ongoing-Deficit-in-Precipitation-in-the-Canal-Watershed.pdf",
+          "published_at": "2023-10-30T00:00:00Z",
+          "countries": [
+            "Panama"
+          ],
+          "topics": [
+            "shipping",
+            "logistics"
+          ],
+          "body": "资料摘要：巴拿马运河管理局2023年10月30日通告因降水不足，拟将2023年12月每日预约名额减为22，2024年1月减为20。所列为当时计划，需与后续通告比较，不代表任一船舶等待时间。",
+          "status": "source_claim",
+          "retrieval_kind": "attributed_public_summary",
+          "observed_at": "2026-10-22T00:00:00Z",
+          "date_basis": "publication_date_only"
+        },
+        {
+          "title": "ACP increases daily transits to 24 from January",
+          "url": "https://pancanal.com/en/panama-canal-to-increase-daily-transits-to-24-starting-in-january/",
+          "published_at": "2023-12-15T00:00:00Z",
+          "countries": [
+            "Panama"
+          ],
+          "topics": [
+            "shipping",
+            "logistics"
+          ],
+          "body": "资料摘要：巴拿马运河管理局2023年12月15日公告称雨量及湖水位好于先前预测，将用新安排取代10月30日通告；措施从2024年1月16日实施，日通行24艘（新巴拿马型7、巴拿马型17），当时为22艘，正常情景为36艘。此前曾预测2024年1月份每日20艘、2月份每日18艘。措施持续至条件需要调整。总量不能推导某艘船已获预约或确定等待天数。",
+          "status": "source_claim",
+          "retrieval_kind": "attributed_public_summary",
+          "observed_at": "2026-10-22T00:00:00Z",
+          "date_basis": "publication_date_only"
+        }
+      ],
+      "review_focus": [
+        "新通告替代旧计划，实施日不能误读成整个1月。",
+        "24艘不等于恢复正常36艘或企业已订到位；不要编等待天数。"
+      ]
+    }
+  ]
+}
