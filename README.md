@@ -1,5 +1,60 @@
 # 地缘政治风险监测预警智能体
 
+给关注海外人员、供应链和经营资产的团队使用。输入关注地区、事件和业务背景，得到带来源的风险简报、可能影响和后续观察清单。
+
+[中文说明与上手](README.zh-CN.md) · [Quickstart](#try-it-in-two-minutes) · [Public examples](examples/README.md) · [Live research](docs/live-research.md)
+
+# GeoRisk Agent
+
+[![CI](https://github.com/workstonedai-collab/georisk-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/workstonedai-collab/georisk-agent/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB)](pyproject.toml)
+[![Status: Alpha](https://img.shields.io/badge/status-alpha-orange.svg)](docs/roadmap.md)
+
+For teams tracking overseas people, shipments and assets. Describe the countries, events and business exposure you care about to build a sourced brief with possible impacts, gaps and indicators to watch.
+
+**Self-hosted alpha.** The offline demo uses fictional evidence and needs no model key. Live research requires a configured model and sources.
+
+## See the workspace
+
+![Country dashboard in the project workspace](docs/assets/country-dashboard.png)
+
+This is the country dashboard, not a completed assessment for an arbitrary business. Use the demo below to inspect saved results; [public examples](examples/README.md) explain which inputs are fictional or attributed public data.
+
+## Try it in two minutes
+
+Python 3.11+ required. No model key, external service or paid account is needed for the offline demonstration.
+
+```bash
+git clone https://github.com/workstonedai-collab/georisk-agent.git
+cd georisk-agent
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e .
+georisk-agent demo
+georisk-agent serve
+```
+
+Open **http://127.0.0.1:8711**. Inspect the saved brief, source records and tool trace. Choose a mission, run it again, or export the result as Markdown/JSON.
+
+The demo uses **fictional scenarios and a deterministic policy**. Its interface and exports are labeled accordingly. It demonstrates the execution and storage path, not the quality of an LLM or real-time intelligence.
+
+For native Windows, use PowerShell without activation:
+
+```powershell
+py -3.11 -m venv .venv
+& ".\.venv\Scripts\python.exe" -m pip install .
+& ".\.venv\Scripts\python.exe" -m georisk_agent demo
+& ".\.venv\Scripts\python.exe" -m georisk_agent serve
+```
+
+See the [Windows installation, model configuration and troubleshooting guide](docs/windows.md). CI exercises Python 3.11–3.13 on Windows, macOS and Linux, plus a clean PowerShell installation. The package is installed from this repository or its release wheel; no PyPI publication is claimed.
+
+## Background and open scope
+
+<details>
+<summary>Research use cases, ongoing work and contact</summary>
+
 一个帮你持续关注地缘政治变化、判断业务影响，并留下证据的研究智能体。你可以告诉它关注哪些国家和地区、哪些人员与资产、哪些航线和业务，它会检索公开信息，阅读相关材料，整理事件进展，给出风险简报和后续观察清单。
 
 新闻每天都有，难的是判断哪条与你有关：一项制裁是否涉及合作方，一次港口限制会不会影响交付，一场局势升级是否已经触及当地团队。把问题、关注范围和业务背景交给它，得到的报告会分别说明来源怎么说、对业务可能意味着什么、目前还缺什么信息，以及接下来该看哪些变化。报告保留来源链接和工具记录，方便你回看依据、补充材料，再做决定。
@@ -9,19 +64,6 @@
 如果你不熟悉编程，可以把这个仓库交给自己的 Agent，让它按说明部署，先跑无需密钥的演示，再带你配置模型、公开搜索和信息源。可以独立使用，也可以与[企业出海咨询/国区营商环境监测智能体](https://github.com/workstonedai-collab/market-entry-agent)交换公共证据。企业背景、研究任务和报告仍保存在各自的私有工作空间。
 
 **开放范围与交流：** 国区评分配方、分项权重、贡献计算与通用研究步骤已公开。部分进一步的研究方法、专用提示词和相关知识内容暂未开源。如有需要或希望进一步交流，欢迎[联系作者](https://github.com/workstonedai-collab)或提交[项目 Issue](https://github.com/workstonedai-collab/georisk-agent/issues/new)；私人资料请勿直接发布在公开 Issue。
-
-[中文上手与详细说明](README.zh-CN.md) · [工作流程与技术路线](#workflow-and-technical-route) · [Public examples](examples/README.md) · [Live research](docs/live-research.md)
-
-# GeoRisk Agent
-
-**Watch geopolitical change. Understand your exposure.**
-
-[![CI](https://github.com/workstonedai-collab/georisk-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/workstonedai-collab/georisk-agent/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB)](pyproject.toml)
-[![Status: Alpha](https://img.shields.io/badge/status-alpha-orange.svg)](docs/roadmap.md)
-
-[简体中文](README.zh-CN.md) · [Quickstart](#try-it-in-two-minutes) · [Architecture](docs/architecture.md) · [Project memory and skills](docs/kernel.md) · [Windows setup](docs/windows.md) · [Deployment](docs/deployment.md) · [Peer project](https://github.com/workstonedai-collab/market-entry-agent)
 
 A research agent for teams whose people, shipments or assets depend on conditions abroad. Give it the countries, events and business exposure you care about. It searches explicit public queries, reads registered sources and saves a brief with source claims, business implications, missing information and indicators to watch.
 
@@ -38,6 +80,12 @@ Reports now use a versioned writing skill during initial drafting. Compare event
 Research questions, exact source fragments and next steps can now be saved and resumed. Optional public-term search composition and local PDF/CSV document ingestion extend the existing tools without adding base dependencies. [Research-state guide](docs/research-state.md).
 
 Three additional historical cases can be run individually to inspect the agent’s direct output: `rubymar-route`, `true-confidence-crews`, `panama-booking`. Inputs, returned JSON actions and raw reports are retained privately for comparison. [Case instructions](docs/report-quality.md#用几组真实事件检查直接生成的原稿).
+
+[中文上手与详细说明](README.zh-CN.md) · [工作流程与技术路线](#workflow-and-technical-route) · [Public examples](examples/README.md) · [Live research](docs/live-research.md)
+
+[简体中文](README.zh-CN.md) · [Quickstart](#try-it-in-two-minutes) · [Architecture](docs/architecture.md) · [Project memory and skills](docs/kernel.md) · [Windows setup](docs/windows.md) · [Deployment](docs/deployment.md) · [Peer project](https://github.com/workstonedai-collab/market-entry-agent)
+
+</details>
 
 ## Continue the business project
 
@@ -183,35 +231,6 @@ flowchart TB
 The shared foundation denotes code distributed inside each package. Private missions, company context, reports and notification state stay in separate workspaces; selected material is transmitted to the configured model endpoint.
 
 </details>
-
-## Try it in two minutes
-
-Python 3.11+ required. No model key, external service or paid account is needed for the offline demonstration.
-
-```bash
-git clone https://github.com/workstonedai-collab/georisk-agent.git
-cd georisk-agent
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -e .
-georisk-agent demo
-georisk-agent serve
-```
-
-Open **http://127.0.0.1:8711**. Inspect the saved brief, source records and tool trace. Choose a mission, run it again, or export the result as Markdown/JSON.
-
-The demo uses **fictional scenarios and a deterministic policy**. Its interface and exports are labeled accordingly. It demonstrates the execution and storage path, not the quality of an LLM or real-time intelligence.
-
-For native Windows, use PowerShell without activation:
-
-```powershell
-py -3.11 -m venv .venv
-& ".\.venv\Scripts\python.exe" -m pip install .
-& ".\.venv\Scripts\python.exe" -m georisk_agent demo
-& ".\.venv\Scripts\python.exe" -m georisk_agent serve
-```
-
-See the [Windows installation, model configuration and troubleshooting guide](docs/windows.md). CI exercises Python 3.11–3.13 on Windows, macOS and Linux, plus a clean PowerShell installation. The package is installed from this repository or its release wheel; no PyPI publication is claimed.
 
 ## Continue a project across research tasks
 
