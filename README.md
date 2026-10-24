@@ -332,3 +332,7 @@ Source statements, hypotheses, judgments and proposed decisions stay distinct ac
 ### Follow the operating exposure
 
 Link events to explicit routes, ports, suppliers or projects, with operator importance and deadlines. Confirmed aliases and dossier merges retain original histories. Changed exposure triggers reassessment, with reasons for attention order. See [risk decision paths](docs/decision-paths.md).
+
+### Connect tools and choose research depth
+
+Expose saved tasks, reports and project state through an opt-in [MCP stdio adapter](docs/mcp.md), read-only by default. Explicit startup permission enables bounded task execution. Operator-configured outbound MCP search receives public queries only. [Optional research branches](docs/research-depth.md) retain separate question paths inside the same run and budgets; document skills describe inputs, outputs and tool needs without granting permissions.

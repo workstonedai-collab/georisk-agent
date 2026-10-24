@@ -100,6 +100,7 @@ class Workflow(Records):
             if old:
                 if self.identity(old['data']) != canonical:
                     raise ValueError('Event identity is immutable; create a distinct event')
+                if 'entity_keys' in old['data']:data.setdefault('entity_keys',old['data']['entity_keys'])
                 # A second URL enriches one dossier, not an independent new event.
                 data['evidence_ids'] = sorted(set(data['evidence_ids'] + old['data']['evidence_ids']))
             command['data'] = data
