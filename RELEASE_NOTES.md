@@ -1,3 +1,11 @@
+# v0.10.0 · 业务关联与可追溯的选择
+
+风险项目新增明确的事件别名与档案合并、业务对象关联、关键日期和可解释的关注顺序。原有报告和项目记录继续保留，操作者选择不会被自动改写。
+
+See [decision paths](docs/decision-paths.md) for examples and limits. Generic workflow and formulas remain public; specialized prompts and private knowledge are not bundled. Existing Mac/Windows/Linux support is retained.
+
+---
+
 # v0.9.0 · 研究记忆与问题相关的上下文
 
 同一项目可以接续来源陈述、假设、判断与拟议方案，保留原来源与修改原因。操作者决定只能由操作者记录。浏览器、CLI 和 HTTP 支持查看、修订、版本历史及移出记忆；任务恢复沿用原快照。确定性的相关性选择兼顾支持/反对依据和关键约束，不增加独立模型审稿流程。
