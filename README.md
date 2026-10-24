@@ -50,6 +50,18 @@ py -3.11 -m venv .venv
 
 See the [Windows installation, model configuration and troubleshooting guide](docs/windows.md). CI exercises Python 3.11–3.13 on Windows, macOS and Linux, plus a clean PowerShell installation. The package is installed from this repository or its release wheel; no PyPI publication is claimed.
 
+## v0.11.0: connect an event to the business it may affect
+
+The [release and installation packages](https://github.com/workstonedai-collab/georisk-agent/releases/tag/v0.11.0) are available. Continue following an event against the routes, ports, suppliers or projects you have recorded.
+
+Save a business object's importance and key dates, then link a sourced event to it. The project retains earlier assessments and explains why an alert is relevant and what deserves attention first. When both records have explicit object IDs, they match through shared IDs; without them, the result is labeled as a country or topic match. Operator-confirmed aliases and dossier merges preserve the original history. See [risk decision paths](docs/decision-paths.md).
+
+Follow-up research keeps source statements, hypotheses, judgments and proposed decisions separate. Context selection brings forward material relevant to the current question, including opposing evidence. Your decisions retain their own revision history, and current input takes precedence. Saved source excerpts, open questions and next steps help continue interrupted work. [Research memory](docs/research-memory.md) · [Saved research state](docs/research-state.md)
+
+An optional [local MCP adapter](docs/mcp.md) lets your client read saved work; task creation and recovery require explicit startup permission. [Question branches](docs/research-depth.md) follow separate lines of inquiry within the same task and budgets. Public search uses only approved queries or term combinations, without adding private business context.
+
+This version was exercised with MiniMax on historical Rubymar material and fictional business conditions, including direct report output, business matching and saved-report reopening. A format failure required recovery from the original response. The report prose was not manually polished; see [case results and limits](docs/report-quality.md#v0110-产品路径验收).
+
 ## Background and open scope
 
 <details>
@@ -75,9 +87,9 @@ New to deployment? Give this repository to your own coding agent. Ask it to run 
 
 **Open scope and contact.** The country-reference formula, component weights, contributions and general research steps are public. Some additional research methods, specialized prompts and associated knowledge resources are not open source at this time. For further discussion, [contact the author](https://github.com/workstonedai-collab) or open a [project issue](https://github.com/workstonedai-collab/georisk-agent/issues/new) without posting private material.
 
-Reports now use a versioned writing skill during initial drafting. Compare event assessments, record entry-route tradeoffs and next checks, and inspect source retrieval status. See [report writing and case evaluation](docs/report-quality.md).
+Initial drafting uses a versioned writing skill to explain event changes, possible business effects and what to watch next. Source retrieval status is available alongside the evidence. See [report writing and case evaluation](docs/report-quality.md).
 
-Research questions, exact source fragments and next steps can now be saved and resumed. Optional public-term search composition and local PDF/CSV document ingestion extend the existing tools without adding base dependencies. [Research-state guide](docs/research-state.md).
+Research questions, exact source fragments and next steps can now be saved and resumed. Optional public-term search composition and local text/CSV imports extend the existing tools. PDF text extraction requires a separately configured adapter and does not include OCR; the base runtime has no added dependencies. [Research-state guide](docs/research-state.md).
 
 Three additional historical cases can be run individually to inspect the agent’s direct output: `rubymar-route`, `true-confidence-crews`, `panama-booking`. Inputs, returned JSON actions and raw reports are retained privately for comparison. [Case instructions](docs/report-quality.md#用几组真实事件检查直接生成的原稿).
 
@@ -203,7 +215,7 @@ sequenceDiagram
     end
 ```
 
-The configured model receives the mission, business context and selected evidence. Public search receives only the public query entries explicitly supplied by the user. Source content is treated as data rather than instructions.
+The configured model receives the mission, business context and selected evidence. Public search receives only explicit public queries or combinations of operator-approved public terms. Source content is treated as data rather than instructions.
 
 ### Shared code, independent workspaces
 
@@ -234,7 +246,7 @@ The shared foundation denotes code distributed inside each package. Private miss
 
 ## Continue a project across research tasks
 
-Give related missions an explicit `project_id`. Save operator-owned facts, recall related reports, load document skills on demand and inspect model-call receipts. Current task input takes precedence; private context stays in the workspace and goes only to the configured model. Public search still receives only explicit public queries.
+Give related missions an explicit `project_id`. Save operator-owned facts, recall related reports, load document skills on demand and inspect model-call receipts. Current task input takes precedence; private context stays in the workspace and goes only to the configured model. Public search receives only explicit queries or approved public-term combinations.
 
 ```bash
 georisk-agent memory-set fictional-research product "Synthetic equipment export case"
@@ -282,13 +294,13 @@ The public package includes generic role instructions, the published research ou
 |---|---|
 | Model-directed research | One JSON action per turn; the model selects documented, bounded tools |
 | Evidence | Content-addressed revisions, original links, claim status and two timestamps |
-| Memory | Explicit project facts, frozen business state and related private reports; legacy same-mission recall without a project ID |
+| Memory | Project facts, source statements, hypotheses, judgments, proposed decisions and operator decisions retain their provenance; context is selected for the current question and frozen per attempt; legacy same-mission recall remains available without a project ID |
 | Recovery | Save steps and model context; retry a failed run without repeating saved steps |
 | Monitoring | Persist recurring missions; a separate worker executes them |
 | Delivery | Save reports immediately; export Markdown/JSON; local pending-review notification inbox |
-| Interfaces | CLI, browser workspace, loopback HTTP API and container recipe |
+| Interfaces | CLI, browser workspace, loopback HTTP API, opt-in local MCP stdio adapter and container recipe |
 
-Available tools: `country_baseline`, `research_plan`, `search_evidence`, `read_evidence`, `recall`, `list_sources`, `fetch_feed`, `web_search`, `fetch_page`, `finish`, `load_skill`, `read_result`, `project_state`. There is no model-generated shell execution. Finding citations must reference records the agent actually read. This validates provenance, not the truth of every model statement.
+Available tools: `country_baseline`, `research_plan`, `search_evidence`, `read_evidence`, `recall`, `list_sources`, `fetch_feed`, `web_search`, `fetch_page`, `finish`, `load_skill`, `read_result`, `project_state`. Saved-research tools add `research_state` and `update_research`; optional public-term composition adds `adaptive_search`, while research depth adds `research_branch` and `close_branch`. Tools are exposed only when their prerequisites are configured. There is no model-generated shell execution. Finding citations must reference records the agent actually read. This validates provenance, not the truth of every model statement.
 
 ## Keep a mission running
 
@@ -331,7 +343,7 @@ Source statements, hypotheses, judgments and proposed decisions stay distinct ac
 
 ### Follow the operating exposure
 
-Link events to explicit routes, ports, suppliers or projects, with operator importance and deadlines. Confirmed aliases and dossier merges retain original histories. Changed exposure triggers reassessment, with reasons for attention order. See [risk decision paths](docs/decision-paths.md).
+Record routes, ports, suppliers and projects with explicit object IDs, importance and deadlines. Compare sourced events with those records and inspect the reasons for attention order. Confirmed aliases and dossier merges preserve original histories; changes in business exposure can be checked again. See [risk decision paths](docs/decision-paths.md).
 
 ### Connect tools and choose research depth
 
