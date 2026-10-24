@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "georisk-agent"
-version = "0.12.1"
+version = "0.13.0"
 description = "A self-hosted geopolitical risk agent with evidence tools, durable missions, event revisions and an operator-reviewed alert inbox."
 readme = "README.md"
 requires-python = ">=3.11"
@@ -24,4 +24,4 @@ Issues = "https://github.com/workstonedai-collab/georisk-agent/issues"
 where = ["src"]
 
 [tool.setuptools.package-data]
-georisk_agent = ["web.html", "workflow-ui.js", "data/*.json"]
+georisk_agent = ["web.html", "workflow-ui.js", "lifecycle-ui.js", "data/*.json"]

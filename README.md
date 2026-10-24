@@ -2,7 +2,7 @@
 
 从一个国际问题出发，查资料、理清事件与各方立场，形成带来源的分析，再接着跟踪会改变判断的新进展。
 
-GeoRisk Agent · [English guide](#english-guide) · [中文完整说明](README.zh-CN.md) · [先跑示例](#try-it-in-two-minutes) · [正式版本 / Release](https://github.com/workstonedai-collab/georisk-agent/releases/tag/v0.12.1)
+GeoRisk Agent · [English guide](#english-guide) · [中文完整说明](README.zh-CN.md) · [先跑示例](#try-it-in-two-minutes) · [正式版本 / Release](https://github.com/workstonedai-collab/georisk-agent/releases/tag/v0.13.0)
 
 [![CI](https://github.com/workstonedai-collab/georisk-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/workstonedai-collab/georisk-agent/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -25,6 +25,12 @@ GeoRisk Agent · [English guide](#english-guide) · [中文完整说明](README.
 
 ## 把研究接着做下去
 
+你提供的材料可以在“我的知识库”里按项目整理：上传文件、查看解析状态，再选择本次研究使用哪些资料。原件、版本与出处留在私有工作空间，更新资料后仍能追溯旧任务。
+
+希望持续关注时，先保存监测方案，预览并确认范围、提醒标准和检查/汇总频率，再启动工作进程。事件风险、长期议题和经营机会分别设置；没有新增内容时保持安静。需要飞书等渠道时，可显式接入已有 Hermes 发送配置。
+
+项目还可以按你的选择积累研究经验：本地整理有效步骤与纠正，或在独立额度内让模型提炼技能候选。技能保留来源任务与版本，可以启用、停用和回退；不会自动扩大工具权限或公开你的资料。[知识库、持续监测与技能学习说明](docs/continuous-research.md)
+
 一次研究结束后，你可以回看报告、来源和工具记录，也可以补充本机资料，沿着尚未解决的问题继续查。研究记忆把来源陈述、假设、判断、拟议方案和你的决定分开保存，保留修订原因；旧判断供本次研究参考，新的输入优先。周期跟踪需单独启动工作进程，新进展和相关提醒先保存在本地，由你决定怎样使用。
 
 成果可以保存为 Markdown、JSON，也可以通过可选的本地 OfficeCLI 导出成可编辑 Word，继续用于讨论或工作材料。已有 Word、Excel、PowerPoint 可通过可选文档适配器导入；转换保留文本及出处信息，复杂排版和表格仍需对照原件。接入自己的工具时，可使用默认只读的本地 MCP 接口。[研究记忆](docs/research-memory.md) · [办公资料与任务入口](docs/office-and-tasks.md) · [MCP 接入](docs/mcp.md)
@@ -33,7 +39,7 @@ GeoRisk Agent · [English guide](#english-guide) · [中文完整说明](README.
 
 **开放范围与交流：** 国区评分配方、分项权重、贡献计算与通用研究步骤已公开。部分进一步的研究方法、专用提示词和相关知识内容暂未开源。如有需要或希望进一步交流，欢迎[联系作者](https://github.com/workstonedai-collab)或提交[项目 Issue](https://github.com/workstonedai-collab/georisk-agent/issues/new)；私人资料请勿直接发布在公开 Issue。
 
-当前正式版本为 **v0.12.1**。可自行部署，项目仍处于 Alpha 阶段；离线演示无需模型密钥，真实研究需配置模型与来源。
+当前正式版本为 **v0.13.0**。可自行部署，项目仍处于 Alpha 阶段；离线演示无需模型密钥，真实研究需配置模型与来源。
 
 <a id="english-guide"></a>
 
@@ -77,6 +83,8 @@ py -3.11 -m venv .venv
 See the [Windows installation, model configuration and troubleshooting guide](docs/windows.md). CI exercises Python 3.11–3.13 on Windows, macOS and Linux, plus a clean PowerShell installation. The package is installed from this repository or its release wheel; no PyPI publication is claimed.
 
 ## Background and open scope
+
+Build named private knowledge collections from your files, then select them for a project task. Draft and preview a watch, confirm its scope, criteria and check/digest cadence, and run a separate worker. Optional procedural learning turns completed tool paths and explicit corrections into private, versioned skills; activation and rollback remain visible. Model distillation has its own opt-in daily budget. [Setup and limits](docs/continuous-research.md).
 
 A research agent for understanding international affairs and following how an assessment changes over time. Start with a question about a country, region, international organization or wider issue. The agent searches within your permitted public scope, reads available material and saves an analysis that distinguishes source statements, interpretation, open questions and next steps.
 
@@ -299,8 +307,8 @@ The public package includes generic role instructions, the published research ou
 | Evidence | Content-addressed revisions, original links, claim status and two timestamps |
 | Memory | Project facts, source statements, hypotheses, judgments, proposed decisions and operator decisions retain their provenance; context is selected for the current question and frozen per attempt; legacy same-mission recall remains available without a project ID |
 | Recovery | Save steps and model context; retry a failed run without repeating saved steps |
-| Monitoring | Persist recurring missions; a separate worker executes them |
-| Delivery | Save reports immediately; export Markdown/JSON; local pending-review notification inbox |
+| Monitoring | Confirmed event/topic/operating watches with separate check and digest cadence, meaningful-change records and recovery; a separate worker executes them |
+| Delivery | Save reports immediately; export Markdown/JSON; local inbox by default, optional explicitly confirmed Hermes destination with receipts |
 | Interfaces | CLI, browser workspace, loopback HTTP API, opt-in local MCP stdio adapter and container recipe |
 
 Available tools: `country_baseline`, `research_plan`, `search_evidence`, `read_evidence`, `recall`, `list_sources`, `fetch_feed`, `web_search`, `fetch_page`, `finish`, `load_skill`, `read_result`, `project_state`. Saved-research tools add `research_state` and `update_research`; optional public-term composition adds `adaptive_search`, while research depth adds `research_branch` and `close_branch`. Tools are exposed only when their prerequisites are configured. There is no model-generated shell execution. Finding citations must reference records the agent actually read. This validates provenance, not the truth of every model statement.
@@ -316,7 +324,7 @@ georisk-agent schedules
 georisk-agent outbox
 ```
 
-Creating a schedule does not start a background service. Model runs may choose to refresh registered feeds; a schedule does not force every source to refresh. New evidence revisions create a new local notification; unchanged evidence for the same mission is deduplicated. Nothing is sent to an external channel. See [runtime and recovery](docs/runtime.md).
+Creating a schedule does not start a background service. Model runs may choose to refresh registered feeds; a schedule does not force every source to refresh. New evidence revisions create a new local notification; unchanged evidence for the same mission is deduplicated. Legacy schedules remain local; new confirmed watches can opt into a separately configured Hermes destination. See [continuous research](docs/continuous-research.md). See [runtime and recovery](docs/runtime.md).
 
 ## Two agents, interoperable evidence
 
@@ -345,14 +353,14 @@ Choose a task in the browser or CLI: geopolitical topic research, event/reportin
 
 ## Scope and next steps
 
-This is a **single-operator, self-hosted alpha**. Current limitations: no hosted tenant system, automatic messaging, guaranteed event coverage, calibrated forecasts, commercial country index or autonomous transaction execution. Automated contract tests cover recovery, citations, search boundaries and streaming failures. See the [roadmap](docs/roadmap.md) and [security boundaries](SECURITY.md).
+This is a **single-operator, self-hosted alpha**. Current limitations: no hosted tenant system, default external messaging, guaranteed event coverage, calibrated forecasts, commercial country index or autonomous transaction execution. Automated contract tests cover recovery, citations, search boundaries and streaming failures. See the [roadmap](docs/roadmap.md) and [security boundaries](SECURITY.md).
 
 Code is MIT licensed. World Bank observations retain their own attribution and terms in [LICENSE-DATA.md](LICENSE-DATA.md). Contributions with reproducible public or synthetic examples are welcome.
 
 
 ## Release and evaluation history
 
-[当前正式版本 v0.12.1](https://github.com/workstonedai-collab/georisk-agent/releases/tag/v0.12.1) · [完整更新记录](RELEASE_NOTES.md) · [报告案例与实际限制](docs/report-quality.md)
+[当前正式版本 v0.13.0](https://github.com/workstonedai-collab/georisk-agent/releases/tag/v0.13.0) · [完整更新记录](RELEASE_NOTES.md) · [报告案例与实际限制](docs/report-quality.md)
 
 <details>
 <summary>Earlier v0.11.0 product paths and evaluation</summary>
