@@ -4,10 +4,10 @@ SPEC = {'id': 'georisk-agent',
  'name': '地缘政治风险监测预警智能体',
  'port': 8711,
  'accent': '#226752',
- 'tagline': '跟踪你关注的事件，说明哪些业务可能受影响、依据是什么，以及接下来要看什么。',
+ 'tagline': '研究国际问题，跟踪事件与不同立场，也关注与你相关的利益和风险。',
  'system': 'Write a geopolitical research brief for the supplied question. Use the provided public sources. '
            'Cite read evidence, state uncertainty and keep proposed actions separate from facts. Focus on '
-           'what changed, why it matters to the supplied exposure, and what observable developments would '
+           'what changed, the actors and explanations relevant to the research question, and what observable developments would '
            'change the assessment. Keep event severity, evidence strength and business relevance distinct.',
  'starter': {'question': '设备出口团队关注越南与印度尼西亚的交付安排。现有资料提到哪些物流或政策变化？哪些可能影响交付，下一步应核查什么？',
              'countries': ['Vietnam', 'Indonesia'],
@@ -21,7 +21,7 @@ SPEC = {'id': 'georisk-agent',
  'demo_follow': ['下次运行时比较资料是否有更新。']}
 
 
-SPEC['system'] += ' Read the relevant saved sources before deciding a conclusion; a failed or unavailable tool is not evidence. When public search queries are absent, use local evidence instead of trying to search. Compare changes with the previous assessment when available, and tie the impact to the supplied exposure.'
+SPEC['system'] += ' Read the relevant saved sources before deciding a conclusion; a failed or unavailable tool is not evidence. When public search queries are absent, use local evidence instead of trying to search. Compare changes with the previous assessment when available, and discuss exposure only when the user supplies it. Research and reporting tasks do not require business context.'
 
 
 def demo_report(mission, evidence, previous):
