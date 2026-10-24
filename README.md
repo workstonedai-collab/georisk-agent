@@ -25,11 +25,19 @@ GeoRisk Agent · [English guide](#english-guide) · [中文完整说明](README.
 
 ## 把研究接着做下去
 
+例如，持续研究某个国际组织中的立场变化时，可以把历次声明、研究笔记和背景报告整理成一个知识库，选入当前任务，再结合允许检索的公开资料比较各方解释。报告保存后，把仍需观察的问题设为持续关注；新材料到来时，接着原来的问题研究，回看哪些依据或判断需要调整。
+
 你提供的材料可以在“我的知识库”里按项目整理：上传文件、查看解析状态，再选择本次研究使用哪些资料。原件、版本与出处留在私有工作空间，更新资料后仍能追溯旧任务。
+
+材料入库后，可以先试查内容，再决定本次研究使用哪些资料。引用保留文档版本与可取得的出处位置；替换材料后，已初始化的任务仍沿用原版本。扫描件需要另行处理，Office 的文字转换也不能代替对原件排版、表格和注释的阅读。
 
 希望持续关注时，先保存监测方案，预览并确认范围、提醒标准和检查/汇总频率，再启动工作进程。事件风险、长期议题和经营机会分别设置；没有新增内容时保持安静。需要飞书等渠道时，可显式接入已有 Hermes 发送配置。
 
+提醒标准可以围绕你的研究问题设置：关注哪些行为体、哪些声明或事件，什么变化值得重新研究，哪些消息只作背景。检查来源与汇总快报可以采用不同频率，也可以设置免打扰时段、首次只建立基线。规则模式按明确词项和来源筛选；需要按文字标准研判时，选择有预算的模型模式。方案、来源配置或外部接收位置发生变化后，需要重新预览并确认。
+
 项目还可以按你的选择积累研究经验：本地整理有效步骤与纠正，或在独立额度内让模型提炼技能候选。技能保留来源任务与版本，可以启用、停用和回退；不会自动扩大工具权限或公开你的资料。[知识库、持续监测与技能学习说明](docs/continuous-research.md)
+
+比如，你可以明确纠正“先区分原始声明与媒体转述，再比较解释”，让这条要求进入本项目的技能候选。默认由你选择版本启用；以后也能停用或回退。学习在报告保存后另行处理，本地整理不增加模型调用，模型提炼使用单独限额；它积累的是研究步骤与使用经验，不更新基础模型权重。
 
 一次研究结束后，你可以回看报告、来源和工具记录，也可以补充本机资料，沿着尚未解决的问题继续查。研究记忆把来源陈述、假设、判断、拟议方案和你的决定分开保存，保留修订原因；旧判断供本次研究参考，新的输入优先。周期跟踪需单独启动工作进程，新进展和相关提醒先保存在本地，由你决定怎样使用。
 
@@ -85,6 +93,14 @@ See the [Windows installation, model configuration and troubleshooting guide](do
 ## Background and open scope
 
 Build named private knowledge collections from your files, then select them for a project task. Draft and preview a watch, confirm its scope, criteria and check/digest cadence, and run a separate worker. Optional procedural learning turns completed tool paths and explicit corrections into private, versioned skills; activation and rollback remain visible. Model distillation has its own opt-in daily budget. [Setup and limits](docs/continuous-research.md).
+
+For a study of changing positions within an international organization, collect earlier statements, research notes and background reports in a private library. Select it for the task and compare explanations against permitted public sources. Once the report is saved, turn an unresolved question into a watch and return to the existing research when new material arrives.
+
+Search imported material before selecting it for a task. Citations retain document versions and available source locations; replacing a file leaves initialized tasks on their saved version. Scanned documents need separate processing, and Office text conversion still requires checking complex tables and layout against the original.
+
+Set watches around the actors, statements and developments relevant to your question. Separate checking from digest delivery, set quiet hours and choose whether the first check only establishes a baseline. Rules mode uses explicit terms and sources; model mode uses your written criteria within a research budget. Changes to the watch, source configuration or external destination require preview and confirmation again.
+
+A correction such as “distinguish original statements from media retellings before comparing explanations” can become a private skill candidate. You choose which version to activate, disable or restore. Learning runs after the report is saved: local extraction adds no model calls, while model distillation has a separate allowance. It develops reusable procedures without training the underlying model.
 
 A research agent for understanding international affairs and following how an assessment changes over time. Start with a question about a country, region, international organization or wider issue. The agent searches within your permitted public scope, reads available material and saves an analysis that distinguishes source statements, interpretation, open questions and next steps.
 
@@ -310,6 +326,8 @@ The public package includes generic role instructions, the published research ou
 | Monitoring | Confirmed event/topic/operating watches with separate check and digest cadence, meaningful-change records and recovery; a separate worker executes them |
 | Delivery | Save reports immediately; export Markdown/JSON; local inbox by default, optional explicitly confirmed Hermes destination with receipts |
 | Interfaces | CLI, browser workspace, loopback HTTP API, opt-in local MCP stdio adapter and container recipe |
+| Knowledge libraries | Selected project collections retain original files, versions and source locations; local retrieval and index rebuilding stay in the private workspace |
+| Procedural skills | Opt-in local extraction or separately budgeted model distillation, with visible candidate versions, activation, disabling and rollback |
 
 Available tools: `country_baseline`, `research_plan`, `search_evidence`, `read_evidence`, `recall`, `list_sources`, `fetch_feed`, `web_search`, `fetch_page`, `finish`, `load_skill`, `read_result`, `project_state`. Saved-research tools add `research_state` and `update_research`; optional public-term composition adds `adaptive_search`, while research depth adds `research_branch` and `close_branch`. Tools are exposed only when their prerequisites are configured. There is no model-generated shell execution. Finding citations must reference records the agent actually read. This validates provenance, not the truth of every model statement.
 
@@ -361,6 +379,16 @@ Code is MIT licensed. World Bank observations retain their own attribution and t
 ## Release and evaluation history
 
 [当前正式版本 v0.13.0](https://github.com/workstonedai-collab/georisk-agent/releases/tag/v0.13.0) · [完整更新记录](RELEASE_NOTES.md) · [报告案例与实际限制](docs/report-quality.md)
+
+Recent releases connect incoming material, everyday research tools and continued project work:
+
+| Release | What changes in use | Guide |
+|---|---|---|
+| v0.13.0: private libraries, watches and procedural skills | Import files, preview and confirm monitoring, and choose whether to generate, activate or roll back private skills | [Setup, recovery and limits](docs/continuous-research.md) |
+| v0.12.0–v0.12.1: Office files and task entry points | Choose a task, optionally import Office material or export a complete Word report; Windows test cleanup waits for file handles to close | [Office and tasks](docs/office-and-tasks.md) |
+| v0.11.0: tool integration and question branches | Read saved research through MCP, explicitly enable task execution, and investigate separate questions within the original task budget | [MCP](docs/mcp.md) · [Research branches](docs/research-depth.md) |
+
+The v0.13.0 installed-package checks exercised library creation, report saving and reopening, watch confirmation and skill generation. Cross-platform checks continue on macOS, Windows and Linux. Scripted substitutes cover the new model branches and Hermes receipts; real-model report cases and their limits remain documented in the case guide linked above.
 
 <details>
 <summary>Earlier v0.11.0 product paths and evaluation</summary>
