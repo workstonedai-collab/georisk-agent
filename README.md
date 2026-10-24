@@ -1,19 +1,45 @@
 # 地缘政治风险监测预警智能体
 
-给关注海外人员、供应链和经营资产的团队使用。输入关注地区、事件和业务背景，得到带来源的风险简报、可能影响和后续观察清单。
+从一个国际问题出发，查资料、理清事件与各方立场，形成带来源的分析，再接着跟踪会改变判断的新进展。
 
-[中文说明与上手](README.zh-CN.md) · [Quickstart](#try-it-in-two-minutes) · [Public examples](examples/README.md) · [Live research](docs/live-research.md)
-
-# GeoRisk Agent
+GeoRisk Agent · [English guide](#english-guide) · [中文完整说明](README.zh-CN.md) · [先跑示例](#try-it-in-two-minutes) · [正式版本 / Release](https://github.com/workstonedai-collab/georisk-agent/releases/tag/v0.12.1)
 
 [![CI](https://github.com/workstonedai-collab/georisk-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/workstonedai-collab/georisk-agent/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB)](pyproject.toml)
 [![Status: Alpha](https://img.shields.io/badge/status-alpha-orange.svg)](docs/roadmap.md)
 
-For teams tracking overseas people, shipments and assets. Describe the countries, events and business exposure you care about to build a sourced brief with possible impacts, gaps and indicators to watch.
+国际问题的资料往往并不少。新闻、声明、报告和论文散在不同地方，同一件事也可能有几种说法。真正费时间的是把它们放回时间和背景中：发生了什么，各方为什么这样做，不同解释各有什么依据，下一步出现什么变化，才值得重新判断。
 
-**Self-hosted alpha.** The offline demo uses fictional evidence and needs no model key. Live research requires a configured model and sources.
+这个项目把资料、分析和后续问题保存在同一个可以接续的研究任务里。你可以带着一个具体问题开始，也可以围绕某个国家、地区、国际组织或长期议题持续跟踪。智能体在你允许的范围内检索公开信息、阅读材料，整理来源陈述、分析判断与信息缺口，直接形成并保存报告。之后继续提问时，可以接着已有资料和判断往下做。
+
+它面向国际关系、国际政治、区域国别、国际组织和全球治理研究者，也面向咨询公司、律所等专业服务从业者、国际记者、国际问题爱好者，以及有海外利益的企业和个人。研究一个议题、准备一篇报道、评估一项利益可能受到的影响，关注点各不相同；你可以按本次任务选择入口，研究和报道任务不必填写企业背景。
+
+## 可以这样使用
+
+**专题研究：围绕一个问题，把解释和依据展开。** 比如研究某个国际组织中的立场变化，可以让它梳理相关行为体、声明和事件顺序，比较材料所支持的解释，说明分歧在哪里、哪些问题还需要进一步找资料。这个入口适合研究讨论和专题准备；是否能覆盖所需文献，取决于实际接入和取得的资料。
+
+**事件跟踪与报道准备：先看新增了什么，再看哪些仍待核实。** 围绕一次选举、一轮谈判或一项政策变化，你可以要求它整理时间线，保留原始声明与转述的归属，列出不同说法和进一步取材的问题。采访问题供后续取材使用，不代表已经完成采访或独立核实。
+
+**利益影响与风险观察：把事件放回与你有关的处境里。** 新闻每天都有，难的是判断哪条与你有关：一项制裁是否涉及合作方，一次港口限制会不会影响交付，一场局势升级是否已经触及当地团队。提供相关人员、资产、航线、项目或其他利益后，可以围绕影响路径、关键条件和下一次观察信号展开分析。事件与某项业务的关联不明时，报告应保留这个条件。
+
+## 把研究接着做下去
+
+一次研究结束后，你可以回看报告、来源和工具记录，也可以补充本机资料，沿着尚未解决的问题继续查。研究记忆把来源陈述、假设、判断、拟议方案和你的决定分开保存，保留修订原因；旧判断供本次研究参考，新的输入优先。周期跟踪需单独启动工作进程，新进展和相关提醒先保存在本地，由你决定怎样使用。
+
+成果可以保存为 Markdown、JSON，也可以通过可选的本地 OfficeCLI 导出成可编辑 Word，继续用于讨论或工作材料。已有 Word、Excel、PowerPoint 可通过可选文档适配器导入；转换保留文本及出处信息，复杂排版和表格仍需对照原件。接入自己的工具时，可使用默认只读的本地 MCP 接口。[研究记忆](docs/research-memory.md) · [办公资料与任务入口](docs/office-and-tasks.md) · [MCP 接入](docs/mcp.md)
+
+如果你不熟悉编程，可以把这个仓库交给自己的 Agent，让它按说明部署，先跑无需密钥的演示，再带你配置模型、公开搜索和信息源。可以独立使用，也可以与[企业出海咨询/国区营商环境监测智能体](https://github.com/workstonedai-collab/market-entry-agent)交换公共证据。企业背景、研究任务和报告仍保存在各自的私有工作空间。
+
+**开放范围与交流：** 国区评分配方、分项权重、贡献计算与通用研究步骤已公开。部分进一步的研究方法、专用提示词和相关知识内容暂未开源。如有需要或希望进一步交流，欢迎[联系作者](https://github.com/workstonedai-collab)或提交[项目 Issue](https://github.com/workstonedai-collab/georisk-agent/issues/new)；私人资料请勿直接发布在公开 Issue。
+
+当前正式版本为 **v0.12.1**。可自行部署，项目仍处于 Alpha 阶段；离线演示无需模型密钥，真实研究需配置模型与来源。
+
+<a id="english-guide"></a>
+
+# GeoRisk Agent
+
+A research agent for understanding international affairs and following how an assessment changes over time. Start with a question about a country, region, international organization or wider issue. The agent searches within your permitted public scope, reads available material and saves an analysis that distinguishes source statements, interpretation, open questions and next steps.
 
 ## See the workspace
 
@@ -50,40 +76,15 @@ py -3.11 -m venv .venv
 
 See the [Windows installation, model configuration and troubleshooting guide](docs/windows.md). CI exercises Python 3.11–3.13 on Windows, macOS and Linux, plus a clean PowerShell installation. The package is installed from this repository or its release wheel; no PyPI publication is claimed.
 
-## v0.11.0: connect an event to the business it may affect
-
-The [release and installation packages](https://github.com/workstonedai-collab/georisk-agent/releases/tag/v0.11.0) are available. Continue following an event against the routes, ports, suppliers or projects you have recorded.
-
-Save a business object's importance and key dates, then link a sourced event to it. The project retains earlier assessments and explains why an alert is relevant and what deserves attention first. When both records have explicit object IDs, they match through shared IDs; without them, the result is labeled as a country or topic match. Operator-confirmed aliases and dossier merges preserve the original history. See [risk decision paths](docs/decision-paths.md).
-
-Follow-up research keeps source statements, hypotheses, judgments and proposed decisions separate. Context selection brings forward material relevant to the current question, including opposing evidence. Your decisions retain their own revision history, and current input takes precedence. Saved source excerpts, open questions and next steps help continue interrupted work. [Research memory](docs/research-memory.md) · [Saved research state](docs/research-state.md)
-
-An optional [local MCP adapter](docs/mcp.md) lets your client read saved work; task creation and recovery require explicit startup permission. [Question branches](docs/research-depth.md) follow separate lines of inquiry within the same task and budgets. Public search uses only approved queries or term combinations, without adding private business context.
-
-This version was exercised with MiniMax on historical Rubymar material and fictional business conditions, including direct report output, business matching and saved-report reopening. A format failure required recovery from the original response. The report prose was not manually polished; see [case results and limits](docs/report-quality.md#v0110-产品路径验收).
-
 ## Background and open scope
 
-<details>
-<summary>Research use cases, ongoing work and contact</summary>
+A research agent for understanding international affairs and following how an assessment changes over time. Start with a question about a country, region, international organization or wider issue. The agent searches within your permitted public scope, reads available material and saves an analysis that distinguishes source statements, interpretation, open questions and next steps.
 
-一个帮你持续关注地缘政治变化、判断业务影响，并留下证据的研究智能体。你可以告诉它关注哪些国家和地区、哪些人员与资产、哪些航线和业务，它会检索公开信息，阅读相关材料，整理事件进展，给出风险简报和后续观察清单。
+It serves researchers in international relations, international politics, area studies, international organizations and global governance; consultants and legal professionals; international journalists; interested readers; and businesses or individuals with overseas interests. Topic research and reporting preparation do not require company context.
 
-新闻每天都有，难的是判断哪条与你有关：一项制裁是否涉及合作方，一次港口限制会不会影响交付，一场局势升级是否已经触及当地团队。把问题、关注范围和业务背景交给它，得到的报告会分别说明来源怎么说、对业务可能意味着什么、目前还缺什么信息，以及接下来该看哪些变化。报告保留来源链接和工具记录，方便你回看依据、补充材料，再做决定。
+Choose **topic research** to examine actors, positions, possible explanations and the evidence behind them. Choose **event tracking and reporting preparation** to follow a timeline, distinguish original statements from retellings and identify what still needs checking. Choose **interest and risk monitoring** to examine how a development may affect the people, assets, operations or other interests you explicitly supply. These are available task contracts, not a claim that every topic or source is covered.
 
-它适合有海外人员、供应链或经营资产的企业，也适合做国区研究、政策研究和风险咨询的团队。单次任务可以围绕具体事件展开；长期关注则可以按周期继续执行，并把结果存入同一个工作空间。来源发生变化时，证据版本会保留，便于追踪同一事件的不同说法与后续进展。提醒先进入本地收件箱，由你决定后续处理。
-
-如果你不熟悉编程，可以把这个仓库交给自己的 Agent，让它按说明部署，先跑无需密钥的演示，再带你配置模型、公开搜索和信息源。可以独立使用，也可以与[企业出海咨询/国区营商环境监测智能体](https://github.com/workstonedai-collab/market-entry-agent)交换公共证据。企业背景、研究任务和报告仍保存在各自的私有工作空间。
-
-**开放范围与交流：** 国区评分配方、分项权重、贡献计算与通用研究步骤已公开。部分进一步的研究方法、专用提示词和相关知识内容暂未开源。如有需要或希望进一步交流，欢迎[联系作者](https://github.com/workstonedai-collab)或提交[项目 Issue](https://github.com/workstonedai-collab/georisk-agent/issues/new)；私人资料请勿直接发布在公开 Issue。
-
-A research agent for teams whose people, shipments or assets depend on conditions abroad. Give it the countries, events and business exposure you care about. It searches explicit public queries, reads registered sources and saves a brief with source claims, business implications, missing information and indicators to watch.
-
-The hard part is deciding which developments affect your operations: whether a shipping incident changes a planned route, a restriction reaches a supplier, or an escalation calls for checking on a local team. The agent keeps source links, evidence revisions and an action trace so you can examine the basis of an assessment and continue the research as events change.
-
-Use it for a single question or recurring research missions. Reports save directly; notifications enter a local inbox for an operator to handle. Researchers, risk teams and businesses with overseas operations can run it independently or exchange public evidence with Market Entry Agent. Private business context and reports remain in separate workspaces.
-
-New to deployment? Give this repository to your own coding agent. Ask it to run the offline demonstration, then help configure a model endpoint, public search and permitted sources. The project is a self-hosted alpha with a CLI and browser workspace.
+Continue with the same project to retain read material, hypotheses, judgments and your own decisions with their revision history. Reports and source records remain available for reopening and export. Recurring work requires a separately started worker; notifications enter a local inbox. Optional local adapters import DOCX/XLSX/PPTX and export the complete saved report as editable Word without another model call. [Task and Office guide](docs/office-and-tasks.md).
 
 **Open scope and contact.** The country-reference formula, component weights, contributions and general research steps are public. Some additional research methods, specialized prompts and associated knowledge resources are not open source at this time. For further discussion, [contact the author](https://github.com/workstonedai-collab) or open a [project issue](https://github.com/workstonedai-collab/georisk-agent/issues/new) without posting private material.
 
@@ -93,12 +94,6 @@ Research questions, exact source fragments and next steps can now be saved and r
 
 Three additional historical cases can be run individually to inspect the agent’s direct output: `rubymar-route`, `true-confidence-crews`, `panama-booking`. Inputs, returned JSON actions and raw reports are retained privately for comparison. [Case instructions](docs/report-quality.md#用几组真实事件检查直接生成的原稿).
 
-[中文上手与详细说明](README.zh-CN.md) · [工作流程与技术路线](#workflow-and-technical-route) · [Public examples](examples/README.md) · [Live research](docs/live-research.md)
-
-[简体中文](README.zh-CN.md) · [Quickstart](#try-it-in-two-minutes) · [Architecture](docs/architecture.md) · [Project memory and skills](docs/kernel.md) · [Windows setup](docs/windows.md) · [Deployment](docs/deployment.md) · [Peer project](https://github.com/workstonedai-collab/market-entry-agent)
-
-</details>
-
 ## Continue the business project
 
 Keep the people, assets, routes or operations you care about in a private project, then follow each event as new sources arrive. Changes in severity, status, evidence strength or business impact create local alerts; summary-only edits and repeated sources stay quiet. Each alert retains source dates, the affected exposure and what to watch next.
@@ -106,6 +101,10 @@ Keep the people, assets, routes or operations you care about in a private projec
 Add an exposure, save an event, or continue research from the project desk. Local comparison uses saved records only. To obtain new information, run research, refresh registered sources or start a configured worker. You can record whether an alert was useful and how it was handled.
 
 [Workflow guide and public replay](docs/product-workflow.md) · [Case sources](examples/public-project-case.json)
+
+### Follow the operating exposure
+
+Record routes, ports, suppliers and projects with explicit object IDs, importance and deadlines. Compare sourced events with those records and inspect the reasons for attention order. Confirmed aliases and dossier merges preserve original histories; changes in business exposure can be checked again. See [risk decision paths](docs/decision-paths.md).
 
 ## Questions to bring to the agent
 
@@ -257,6 +256,10 @@ georisk-agent skills
 
 Model context uses a configurable character budget and saved-result references. Pause/cancel controls settle at safe boundaries; failed attempts retain completed steps and a model-call limit across resume. [Full guide: memory, context, tools, skills and recovery](docs/kernel.md). Windows uses the same commands through its venv Python.
 
+### Continue research with typed memory
+
+Source statements, hypotheses, judgments and proposed decisions stay distinct across runs of an explicit project. Context selection uses the current question and critical constraints, retaining relevant opposing evidence. Operators can record decisions, inspect revisions and remove memory; resumed runs retain their frozen context. Previous analysis never becomes newly read evidence. See [research memory and context](docs/research-memory.md).
+
 ## Use a model and your evidence
 
 Set an explicit chat-completions endpoint. A dedicated [Hermes API profile](docs/hermes.md) is supported through its compatible endpoint; other compatible local or hosted models can use the same JSON-action protocol.
@@ -330,6 +333,16 @@ docker run --rm georisk-agent demo
 
 For persistent serving, authentication, workers and reverse proxy setup, see [deployment](docs/deployment.md). GitHub hosts the code and releases; it does not operate a live monitoring service for you.
 
+## Tools and Office files
+
+### Connect tools and choose research depth
+
+Expose saved tasks, reports and project state through an opt-in [MCP stdio adapter](docs/mcp.md), read-only by default. Explicit startup permission enables bounded task execution. Operator-configured outbound MCP search receives public queries only. [Optional research branches](docs/research-depth.md) retain separate question paths inside the same run and budgets; document skills describe inputs, outputs and tool needs without granting permissions.
+
+### Office files and task-focused research
+
+Choose a task in the browser or CLI: geopolitical topic research, event/reporting preparation or interest monitoring; market options, transaction review or operating-premise monitoring. Optional MarkItDown imports local DOCX/XLSX/PPTX, while a local iOfficeAI/OfficeCLI adapter exports the complete saved report as editable DOCX without another model call. [Setup and boundaries](docs/office-and-tasks.md) · [Integration references](docs/integration-references.md).
+
 ## Scope and next steps
 
 This is a **single-operator, self-hosted alpha**. Current limitations: no hosted tenant system, automatic messaging, guaranteed event coverage, calibrated forecasts, commercial country index or autonomous transaction execution. Automated contract tests cover recovery, citations, search boundaries and streaming failures. See the [roadmap](docs/roadmap.md) and [security boundaries](SECURITY.md).
@@ -337,19 +350,23 @@ This is a **single-operator, self-hosted alpha**. Current limitations: no hosted
 Code is MIT licensed. World Bank observations retain their own attribution and terms in [LICENSE-DATA.md](LICENSE-DATA.md). Contributions with reproducible public or synthetic examples are welcome.
 
 
-### Continue research with typed memory
+## Release and evaluation history
 
-Source statements, hypotheses, judgments and proposed decisions stay distinct across runs of an explicit project. Context selection uses the current question and critical constraints, retaining relevant opposing evidence. Operators can record decisions, inspect revisions and remove memory; resumed runs retain their frozen context. Previous analysis never becomes newly read evidence. See [research memory and context](docs/research-memory.md).
+[当前正式版本 v0.12.1](https://github.com/workstonedai-collab/georisk-agent/releases/tag/v0.12.1) · [完整更新记录](RELEASE_NOTES.md) · [报告案例与实际限制](docs/report-quality.md)
 
-### Follow the operating exposure
+<details>
+<summary>Earlier v0.11.0 product paths and evaluation</summary>
 
-Record routes, ports, suppliers and projects with explicit object IDs, importance and deadlines. Compare sourced events with those records and inspect the reasons for attention order. Confirmed aliases and dossier merges preserve original histories; changes in business exposure can be checked again. See [risk decision paths](docs/decision-paths.md).
+## v0.11.0: connect an event to the business it may affect
 
-### Connect tools and choose research depth
+The [release and installation packages](https://github.com/workstonedai-collab/georisk-agent/releases/tag/v0.11.0) are available. Continue following an event against the routes, ports, suppliers or projects you have recorded.
 
-Expose saved tasks, reports and project state through an opt-in [MCP stdio adapter](docs/mcp.md), read-only by default. Explicit startup permission enables bounded task execution. Operator-configured outbound MCP search receives public queries only. [Optional research branches](docs/research-depth.md) retain separate question paths inside the same run and budgets; document skills describe inputs, outputs and tool needs without granting permissions.
+Save a business object's importance and key dates, then link a sourced event to it. The project retains earlier assessments and explains why an alert is relevant and what deserves attention first. When both records have explicit object IDs, they match through shared IDs; without them, the result is labeled as a country or topic match. Operator-confirmed aliases and dossier merges preserve the original history. See [risk decision paths](docs/decision-paths.md).
 
+Follow-up research keeps source statements, hypotheses, judgments and proposed decisions separate. Context selection brings forward material relevant to the current question, including opposing evidence. Your decisions retain their own revision history, and current input takes precedence. Saved source excerpts, open questions and next steps help continue interrupted work. [Research memory](docs/research-memory.md) · [Saved research state](docs/research-state.md)
 
-### Office files and task-focused research
+An optional [local MCP adapter](docs/mcp.md) lets your client read saved work; task creation and recovery require explicit startup permission. [Question branches](docs/research-depth.md) follow separate lines of inquiry within the same task and budgets. Public search uses only approved queries or term combinations, without adding private business context.
 
-Choose a task in the browser or CLI: geopolitical topic research, event/reporting preparation or interest monitoring; market options, transaction review or operating-premise monitoring. Optional MarkItDown imports local DOCX/XLSX/PPTX, while a local iOfficeAI/OfficeCLI adapter exports the complete saved report as editable DOCX without another model call. [Setup and boundaries](docs/office-and-tasks.md) · [Integration references](docs/integration-references.md).
+This version was exercised with MiniMax on historical Rubymar material and fictional business conditions, including direct report output, business matching and saved-report reopening. A format failure required recovery from the original response. The report prose was not manually polished; see [case results and limits](docs/report-quality.md#v0110-产品路径验收).
+
+</details>
