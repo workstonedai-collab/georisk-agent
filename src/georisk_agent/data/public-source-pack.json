@@ -1,0 +1,38 @@
+{
+  "sources": [
+    {
+      "id": "imo-red-sea",
+      "title": "IMO: Red Sea area",
+      "kind": "page",
+      "url": "https://www.imo.org/en/mediacentre/hottopics/pages/red-sea.aspx",
+      "allowed_hosts": [
+        "www.imo.org"
+      ],
+      "countries": [
+        "Yemen"
+      ],
+      "topics": [
+        "red-sea",
+        "shipping"
+      ],
+      "refresh_hours": 24
+    },
+    {
+      "id": "imo-true-confidence-2024",
+      "title": "IMO: True Confidence historical statement (2024)",
+      "kind": "page",
+      "url": "https://www.imo.org/en/MediaCentre/PressBriefings/pages/Attack-on-True-Confidence.aspx",
+      "allowed_hosts": [
+        "www.imo.org"
+      ],
+      "countries": [
+        "Yemen"
+      ],
+      "topics": [
+        "red-sea",
+        "shipping"
+      ],
+      "refresh_hours": 24
+    }
+  ]
+}

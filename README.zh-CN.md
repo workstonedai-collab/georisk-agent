@@ -2,9 +2,9 @@
 
 从一个国际问题出发，查资料、理清事件与各方立场，形成带来源的分析，再接着跟踪会改变判断的新进展。
 
-[English guide](README.md#english-guide) · [先跑示例](#先跑通一个示例) · [工作流程](#一次研究怎样完成) · [正式版本](https://github.com/workstonedai-collab/georisk-agent/releases/tag/v0.13.0) · [Windows 安装](docs/windows.md)
+[English guide](README.md#english-guide) · [先跑示例](#先跑通一个示例) · [工作流程](#一次研究怎样完成) · [正式版本](https://github.com/workstonedai-collab/georisk-agent/releases/tag/v0.14.0) · [Windows 安装](docs/windows.md)
 
-当前正式版本为 **v0.13.0**。项目仍处于 Alpha 阶段，可自行部署；离线演示不需要模型密钥，真实研究需配置模型与来源。
+当前正式版本为 **v0.14.0**。项目仍处于 Alpha 阶段，可自行部署；离线演示不需要模型密钥，真实研究需配置模型与来源。
 
 ## 项目背景与开放范围
 
@@ -23,6 +23,8 @@
 **利益影响与风险观察：把事件放回与你有关的处境里。** 新闻每天都有，难的是判断哪条与你有关：一项制裁是否涉及合作方，一次港口限制会不会影响交付，一场局势升级是否已经触及当地团队。提供相关人员、资产、航线、项目或其他利益后，可以围绕影响路径、关键条件和下一次观察信号展开分析。事件与某项业务的关联不明时，报告应保留这个条件。
 
 ## 把研究接着做下去
+
+第一次配置时，可以在网页填写模型设置、单独测试连接，再选择要添加的官方来源。日常使用时，查看持续运行进程的最近心跳与检查记录；已保存报告可直接导出带标题、列表的可编辑 Word，不额外调用模型。原有 OfficeCLI 和 MCP 入口继续保留。[配置与日常使用](docs/setup-and-use.md)
 
 报告和快报保存后，可以留下是否有用、是否重复或需要怎样纠正的反馈，再决定是否调整持续关注。“经验与技能”也能查看某个版本何时被带进后续任务、关联报告收到了什么反馈，便于决定继续使用、停用或回退。[反馈与技能记录](docs/feedback-and-skills.md)
 
@@ -293,12 +295,13 @@ georisk-agent skills
 
 ## 版本与验证记录
 
-[当前正式版本 v0.13.0](https://github.com/workstonedai-collab/georisk-agent/releases/tag/v0.13.0) · [完整更新记录](RELEASE_NOTES.md) · [报告案例与实际限制](docs/report-quality.md)
+[当前正式版本 v0.14.0](https://github.com/workstonedai-collab/georisk-agent/releases/tag/v0.14.0) · [完整更新记录](RELEASE_NOTES.md) · [报告案例与实际限制](docs/report-quality.md)
 
 这几轮更新分别补上了资料进入研究、研究接到日常工作，以及后续持续使用的环节：
 
 | 更新 | 使用时有什么变化 | 说明 |
 |---|---|---|
+| v0.14.0：接着研究与日常使用 | 研究档案、引用版本、明确反馈、技能使用记录、网页配置与直接 Word 导出 | [配置与使用](docs/setup-and-use.md) |
 | v0.13.0：知识库、持续关注与经验技能 | 上传资料建库；预览并确认监测；选择是否积累、启用和回退私有技能 | [设置、恢复与限制](docs/continuous-research.md) |
 | v0.12.0–v0.12.1：办公资料与任务入口 | 按本次问题选择任务；可选导入 Office 文件、导出完整 Word 报告；修复 Windows 测试清理时的文件占用 | [办公资料与使用方式](docs/office-and-tasks.md) |
 | v0.11.0：工具接入与分别取材 | 自有客户端通过 MCP 读取研究；显式开启后可运行任务；不同子问题共用原任务预算 | [MCP](docs/mcp.md) · [研究分支](docs/research-depth.md) |

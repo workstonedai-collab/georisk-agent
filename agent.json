@@ -1,7 +1,7 @@
 {
   "schema": "field-agent/v1",
   "id": "georisk-agent",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "entrypoint": "georisk-agent",
   "python_module": "georisk_agent",
   "engines": {
