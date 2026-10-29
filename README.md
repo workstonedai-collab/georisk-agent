@@ -25,6 +25,8 @@ GeoRisk Agent · [English guide](#english-guide) · [中文完整说明](README.
 
 ## 把研究接着做下去
 
+报告和快报保存后，可以留下是否有用、是否重复或需要怎样纠正的反馈，再决定是否调整持续关注。“经验与技能”也能查看某个版本何时被带进后续任务、关联报告收到了什么反馈，便于决定继续使用、停用或回退。[反馈与技能记录](docs/feedback-and-skills.md)
+
 研究做过几轮后，可以从项目页的研究档案找回报告、未解决的问题、已有判断和来源。知识库支持部分机构与术语的中英文别名匹配、发布日期筛选和匹配片段阅读；从报告打开引用时，仍使用当时的文件版本。另提供少量可选择登记的官方来源配置。[在一个项目里接着研究](docs/project-research.md)
 
 例如，持续研究某个国际组织中的立场变化时，可以把历次声明、研究笔记和背景报告整理成一个知识库，选入当前任务，再结合允许检索的公开资料比较各方解释。报告保存后，把仍需观察的问题设为持续关注；新材料到来时，接着原来的问题研究，回看哪些依据或判断需要调整。
@@ -93,6 +95,8 @@ py -3.11 -m venv .venv
 See the [Windows installation, model configuration and troubleshooting guide](docs/windows.md). CI exercises Python 3.11–3.13 on Windows, macOS and Linux, plus a clean PowerShell installation. The package is installed from this repository or its release wheel; no PyPI publication is claimed.
 
 ## Background and open scope
+
+Saved reports and digests accept explicit feedback. Review suggested watch adjustments before changing and confirming settings. The skills page records which versions entered later task contexts and the feedback on related reports, helping you decide what to keep or roll back. [Feedback and skill records](docs/feedback-and-skills.md).
 
 The project desk brings saved reports, open questions, judgments and sources together. Private libraries add limited bilingual name matching, publication-date filters and readable matching excerpts; report citations reopen the document version used by that task. Small official-source packs remain opt-in. [Continue project research](docs/project-research.md).
 
